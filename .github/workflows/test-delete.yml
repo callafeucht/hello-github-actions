@@ -1,0 +1,15 @@
+name: TEST DELETE
+
+on: [delete]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Extract Branch Name
+        shell: bash
+        env:
+          DEL_BRANCH: ${{ github.event.ref }}
+        run: echo ${DEL_BRANCH}
